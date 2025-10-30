@@ -140,7 +140,8 @@ Copy the token and use it in all subsequent requests as: `Authorization: Bearer 
 ```
 <img width="3840" height="1080" alt="image" src="https://github.com/user-attachments/assets/19f3fb8c-389c-4579-83b3-837421a2cbc6" />
 <img width="3840" height="1080" alt="image" src="https://github.com/user-attachments/assets/e55959c9-8bb0-4518-9968-3da8a8ed87f9" />
-<img width="3840" height="1080" alt="image" src="https://github.com/user-attachments/assets/fc915dfe-843c-4654-9820-3a95fddf461e" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/478cf4eb-1255-4a4f-81df-1ebce0b08c2f" />
+
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a72988e5-108e-44b6-866b-291e06a9ead8" />
 
