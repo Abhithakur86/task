@@ -1,0 +1,266 @@
+{
+  "info": {
+    "name": "Category & Services API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@codesfortomorrow.com\",\n  \"password\": \"Admin123!@#\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "login"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"categoryName\": \"Home Cleaning\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/category",
+              "host": ["{{base_url}}"],
+              "path": ["api", "category"]
+            }
+          }
+        },
+        {
+          "name": "Get All Categories",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/categories",
+              "host": ["{{base_url}}"],
+              "path": ["api", "categories"]
+            }
+          }
+        },
+        {
+          "name": "Update Category",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"categoryName\": \"Professional Cleaning Services\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/category/:categoryId",
+              "host": ["{{base_url}}"],
+              "path": ["api", "category", ":categoryId"],
+              "variable": [
+                {
+                  "key": "categoryId",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Category",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/category/:categoryId",
+              "host": ["{{base_url}}"],
+              "path": ["api", "category", ":categoryId"],
+              "variable": [
+                {
+                  "key": "categoryId",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "item": [
+        {
+          "name": "Create Service",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"serviceName\": \"Deep Cleaning\",\n  \"type\": \"VIP\",\n  \"priceOptions\": [\n    {\n      \"duration\": 2,\n      \"price\": 50.00,\n      \"type\": \"Hourly\"\n    },\n    {\n      \"duration\": 1,\n      \"price\": 300.00,\n      \"type\": \"Weekly\"\n    },\n    {\n      \"duration\": 1,\n      \"price\": 1000.00,\n      \"type\": \"Monthly\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/category/:categoryId/service",
+              "host": ["{{base_url}}"],
+              "path": ["api", "category", ":categoryId", "service"],
+              "variable": [
+                {
+                  "key": "categoryId",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get All Services in Category",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/category/:categoryId/services",
+              "host": ["{{base_url}}"],
+              "path": ["api", "category", ":categoryId", "services"],
+              "variable": [
+                {
+                  "key": "categoryId",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Service",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"serviceName\": \"Premium Deep Cleaning\",\n  \"type\": \"VIP\",\n  \"priceOptions\": [\n    {\n      \"duration\": 3,\n      \"price\": 60.00,\n      \"type\": \"Hourly\"\n    },\n    {\n      \"duration\": 1,\n      \"price\": 350.00,\n      \"type\": \"Weekly\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/category/:categoryId/service/:serviceId",
+              "host": ["{{base_url}}"],
+              "path": ["api", "category", ":categoryId", "service", ":serviceId"],
+              "variable": [
+                {
+                  "key": "categoryId",
+                  "value": "1"
+                },
+                {
+                  "key": "serviceId",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Service",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/category/:categoryId/service/:serviceId",
+              "host": ["{{base_url}}"],
+              "path": ["api", "category", ":categoryId", "service", ":serviceId"],
+              "variable": [
+                {
+                  "key": "categoryId",
+                  "value": "1"
+                },
+                {
+                  "key": "serviceId",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "token",
+      "value": "387301bddb65f914a154f1a4c26b78d63ae033aeb5751a7f3d3860e8bfd69d80"
+    }
+  ]
+}
